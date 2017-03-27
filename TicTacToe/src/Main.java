@@ -23,11 +23,15 @@ public class Main {
         while(p.matchEnd() == '_'){
             ai1.move();
             p.print();
+            if( p.matchEnd() != '_'){
+                break;
+            }
             ai2.move();
             p.print();
         }
-        
-        
+        System.out.println("/////////////");
+        System.out.println("Winner is: " + p.matchEnd());
+        System.out.println("/////////////");
     }
     
 }

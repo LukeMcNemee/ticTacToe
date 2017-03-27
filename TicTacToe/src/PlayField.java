@@ -43,7 +43,7 @@ public class PlayField {
         if (field[x][y] == '_') {
             field[x][y] = currentSymbol;
             switchSymbol();
-            count ++;
+            count++;
             return 0;
         } else {
 
@@ -75,11 +75,27 @@ public class PlayField {
             System.out.println();
         }
     }
-    
-    public char matchEnd(){
-        if(count == size*size){
+
+    public char matchEnd() {
+        if (count == size * size) {
             return 'D';
         }
+
+        for (int i = 0; i < size; i++) {
+            if (field[i][0] == field[i][1] && field[i][0] == field[i][2] && field[i][0] != '_') {
+                return field[i][0];
+            }
+            if (field[0][i] == field[1][i] && field[0][i] == field[2][i] && field[0][i] != '_') {
+                return field[i][0];
+            }
+        }
+        if (field[0][0] == field[1][1] && field[0][0] == field[2][2] && field[0][0] != '_') {
+            return field[0][0];
+        }
+        if (field[2][0] == field[1][1] && field[2][0] == field[0][2] && field[2][0] != '_') {
+            return field[2][0];
+        }
+
         return '_';
     }
 }

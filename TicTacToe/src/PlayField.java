@@ -77,9 +77,7 @@ public class PlayField {
     }
 
     public char matchEnd() {
-        if (count == size * size) {
-            return 'D';
-        }
+        
 
         for (int i = 0; i < size; i++) {
             if (field[i][0] == field[i][1] && field[i][0] == field[i][2] && field[i][0] != '_') {
@@ -96,6 +94,10 @@ public class PlayField {
             return field[2][0];
         }
 
+        if (count == size * size) {
+            return 'D';
+        }
+        
         return '_';
     }
 }

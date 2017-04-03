@@ -21,12 +21,18 @@ public class Main {
         ai2.setPlayfield(p);
         
         while(p.matchEnd() == '_'){
-            ai1.move();
+            p.next();
+            while(!p.isPlayed()){            
+                ai1.move();
+            }
             p.print();
             if( p.matchEnd() != '_'){
                 break;
             }
-            ai2.move();
+            p.next();
+            while(!p.isPlayed()){
+                ai2.move();
+            }
             p.print();
         }
         System.out.println("/////////////");

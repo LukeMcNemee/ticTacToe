@@ -14,9 +14,14 @@ public class PlayField {
     private char currentSymbol;
     private char[][] field;
     private int count = 0;
+    private boolean played;
 
     public int getSize() {
         return size;
+    }
+
+    public boolean isPlayed() {
+        return played;
     }
 
     public PlayField() {
@@ -27,13 +32,21 @@ public class PlayField {
             }
         }
         currentSymbol = 'X';
+        played = false;
     }
 
     public char getCurrentSymbol() {
         return currentSymbol;
     }
 
+    public void next(){
+        played = false;
+    }
+    
     public int play(int x, int y) {
+        if(played){
+            return 1;
+        }
         if (x < 0 || x >= size) {
             return 1;
         }
@@ -57,6 +70,7 @@ public class PlayField {
         } else {
             currentSymbol = 'X';
         }
+        played = true;
     }
 
     public char getPosition(int x, int y) {

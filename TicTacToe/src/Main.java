@@ -15,7 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         PlayField p = new PlayField();
-        AI ai1 = new SimpleAI();
+        AI ai1 = new Human();
         ai1.setPlayfield(p);
         AI ai2 = new SimpleAI();
         ai2.setPlayfield(p);

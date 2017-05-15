@@ -15,9 +15,9 @@ public class Main {
      */
     public static void main(String[] args) {
         PlayField p = new PlayField();
-        AI ai1 = new Human();
+        AI ai1 = new SimpleAI();
         ai1.setPlayfield(p);
-        AI ai2 = new SimpleAI();
+        AI ai2 = new AIv2();
         ai2.setPlayfield(p);
         
         while(p.matchEnd() == '_'){
